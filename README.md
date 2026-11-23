@@ -22,3 +22,20 @@ string handling, and file I/O.
 
 Run the commands from the `c-cpp-programming` folder with a C++17 compiler.
 For Sales Records, choose **Add Records** first to create `Sales.txt`.
+
+## Algorithms & Data Structures
+
+C++ coursework covering stacks, B-tree indexes, sorting, and graph algorithms.
+
+| Project | What it demonstrates | Build and run from the project folder |
+| --- | --- | --- |
+| [B-tree Student Database](algorithms-and-data-structures/lab-2/) | Stores student records on disk and uses separate B-tree indexes for ID and last-name lookups. Supports adding records and listing them in index order. | `c++ -std=c++17 *.cpp -o btree && ./btree students.txt demo 3 commands.txt report.txt` |
+| [Sorting Benchmark](algorithms-and-data-structures/lab-3/) | Compares selection, merge, quick, and heap sort on identical inputs and checks that each result is sorted. | `c++ -O2 -std=c++17 main.cpp -o sort-benchmark && ./sort-benchmark` |
+| [Infix-to-Postfix Converter](algorithms-and-data-structures/lab-1/) | Uses a custom templated stack to handle operator precedence and parentheses, then evaluates numeric expressions. | `c++ -std=c++17 in2post.cpp -o in2post && ./in2post` |
+
+For the database demo, open `report.txt` after running it.
+For the expression converter, separate each token with spaces. Try `2 + 3 * 4`.
+
+[Browse the individual exercises](algorithms-and-data-structures/exercises/),
+including Quickselect, Dijkstra’s shortest-path algorithm, and Kruskal’s
+minimum spanning tree algorithm.
