@@ -39,3 +39,22 @@ For the expression converter, separate each token with spaces. Try `2 + 3 * 4`.
 [Browse the individual exercises](algorithms-and-data-structures/exercises/),
 including Quickselect, Dijkstra’s shortest-path algorithm, and Kruskal’s
 minimum spanning tree algorithm.
+
+## Java Programming
+
+Introductory Java console programs covering user input, methods,
+arithmetic, and date handling with `LocalDate`.
+
+- [Month Handling](java-programming/TestMonthHandling.java) — Demonstrates how `LocalDate` handles month-end dates and leap years.
+- [Paint Calculator](java-programming/PaintCalculator.java) — Calculates wall area and estimates paint cost from room dimensions.
+- [Egg Order Calculator](java-programming/Eggs.java) — Uses integer division and remainder to price dozens and individual eggs.
+
+To run the month-handling example, use a JDK and run these commands
+from the `java-programming` folder:
+
+```sh
+javac -d out TestMonthHandling.java
+java -cp out TestMonthHandling
+```
+
+[Browse all Java exercises](java-programming/).
