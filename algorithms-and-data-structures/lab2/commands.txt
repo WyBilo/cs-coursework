@@ -1,0 +1,6 @@
+find ID 100000001
+find name Rivera
+add 100000003 Chen Casey 1 CS casey@example.com
+find ID 100000003
+dump by ID
+find ID 100000099
