@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Drawing Program with Clear Button</title>
+    <style>
+        #canvas {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        #canvas td {
+            width: 6px;
+            height: 6px;
+            padding: 0;
+            background-color: white;
+        }
+
+        caption {
+            padding-bottom: 10px;
+        }
+    </style>
+    <script>
+        function createCanvas() {
+            var tableBody = document.getElementById("tablebody");
+
+            for (var row = 0; row < 100; row++) {
+                var tableRow = document.createElement("tr");
+
+                for (var column = 0; column < 100; column++) {
+                    var cell = document.createElement("td");
+                    tableRow.appendChild(cell);
+                }
+
+                tableBody.appendChild(tableRow);
+            }
+
+            tableBody.addEventListener("mousemove", processMouseMove);
+
+            document.getElementById("clearButton")
+                .addEventListener("click", clearDrawing);
+        }
+
+        function processMouseMove(event) {
+            if (event.target.tagName !== "TD") {
+                return;
+            }
+
+            if (event.altKey) {
+                event.target.style.backgroundColor = "white";
+            } else if (event.ctrlKey) {
+                event.target.style.backgroundColor = "blue";
+            } else if (event.shiftKey) {
+                event.target.style.backgroundColor = "red";
+            }
+        }
+
+        function clearDrawing() {
+            var cells = document.getElementById("tablebody")
+                .getElementsByTagName("td");
+
+            for (var i = 0; i < cells.length; i++) {
+                cells[i].style.backgroundColor = "white";
+            }
+        }
+
+        window.addEventListener("load", createCanvas);
+    </script>
+</head>
+
+<body>
+    <p>
+        <button id="clearButton" type="button">Clear Drawing</button>
+    </p>
+
+    <table id="canvas">
+        <caption>
+            Hold Ctrl to draw blue.
+            Hold Shift to draw red.
+            Hold Alt to erase.
+        </caption>
+        <tbody id="tablebody"></tbody>
+    </table>
+</body>
+
+</html>

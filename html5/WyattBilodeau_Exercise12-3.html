@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Highlighting Links</title>
+    <script>
+        function highlightLinks() {
+            for (var i = 0; i < document.links.length; i++) {
+                document.links[i].style.backgroundColor = "yellow";
+            }
+        }
+
+        window.addEventListener("load", highlightLinks);
+    </script>
+</head>
+
+<body>
+    <h1>Deitel Resource Centers</h1>
+
+    <p>
+        <a href="http://www.deitel.com/">Deitel's website</a>
+        contains a growing
+        <a href="http://www.deitel.com/ResourceCenters.html">list
+            of Resource Centers</a> on a wide range of topics.
+        Many Resource Centers relate to topics covered in this book,
+        <a href="http://www.deitel.com/books/iw3htp5">Internet &amp;
+            World Wide Web How to Program, 5th Edition</a>.
+        We have Resource Centers on
+        <a href="http://www.deitel.com/Web2.0">Web 2.0</a>,
+        <a href="http://www.deitel.com/Firefox">Firefox</a> and
+        <a href="http://www.deitel.com/IE9">Internet Explorer 9</a>,
+        <a href="http://www.deitel.com/HTML5">HTML5</a>, and
+        <a href="http://www.deitel.com/JavaScript">JavaScript</a>.
+        Watch for related new Resource Centers.
+    </p>
+</body>
+
+</html>

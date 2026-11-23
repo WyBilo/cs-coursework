@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Salesperson Salary Ranges</title>
+</head>
+
+<body>
+    <h1>Salesperson Salary Ranges</h1>
+
+    <form id="salesForm">
+        <label for="grossSales">Gross weekly sales ($)</label>
+        <input type="number" id="grossSales" min="0" step="0.01" required>
+        <button type="submit">Add salesperson</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Weekly salary</th>
+                <th scope="col">Salespeople</th>
+            </tr>
+        </thead>
+        <tbody id="salaryRows"></tbody>
+    </table>
+
+    <script>
+        const ranges = [
+            "$200–$299", "$300–$399", "$400–$499",
+            "$500–$599", "$600–$699", "$700–$799",
+            "$800–$899", "$900–$999", "$1000 and over"
+        ];
+
+        const counts = new Array(ranges.length).fill(0);
+        const form = document.getElementById("salesForm");
+        const salesInput = document.getElementById("grossSales");
+        const salaryRows = document.getElementById("salaryRows");
+
+        function displayCounts() {
+            salaryRows.textContent = "";
+
+            for (let i = 0; i < ranges.length; i++) {
+                const row = salaryRows.insertRow();
+                row.insertCell().textContent = ranges[i];
+                row.insertCell().textContent = counts[i];
+            }
+        }
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const salesCents = Math.round(salesInput.valueAsNumber * 100);
+            // Nine percent of sales in cents, converted to whole dollars.
+            const salary = 200 + Math.trunc((salesCents * 9) / 10000);
+            const rangeIndex = Math.min(Math.floor(salary / 100) - 2, 8);
+
+            counts[rangeIndex]++;
+            displayCounts();
+            form.reset();
+            salesInput.focus();
+        });
+
+        displayCounts();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Calculating the Area of a Circle</title>
+    <script>
+        function start() {
+            var form = document.getElementById("circleForm");
+            form.addEventListener("submit", displayArea);
+        }
+
+        function displayArea(event) {
+            event.preventDefault();
+
+            var inputField = document.getElementById("radiusField");
+            var radius = parseFloat(inputField.value);
+            var result = document.getElementById("result");
+
+            result.textContent = "Circle area is: " + circleArea(radius);
+        }
+
+        function circleArea(radius) {
+            return Math.PI * Math.pow(radius, 2);
+        }
+
+        window.addEventListener("load", start);
+    </script>
+</head>
+
+<body>
+    <form id="circleForm">
+        <label for="radiusField">Radius</label>
+        <input id="radiusField" type="number" min="0" step="any" required>
+        <button type="submit">Calculate</button>
+    </form>
+
+    <p id="result"></p>
+</body>
+
+</html>

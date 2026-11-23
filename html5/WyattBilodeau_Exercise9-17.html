@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Temperature Converter</title>
+</head>
+
+<body>
+    <label for="temperatureField">Temperature</label>
+    <input id="temperatureField" type="number" step="any" required>
+
+    <button id="toCelsius" type="button">Fahrenheit to Celsius</button>
+    <button id="toFahrenheit" type="button">Celsius to Fahrenheit</button>
+
+    <p id="result"></p>
+
+    <script>
+        // (a) Convert Fahrenheit to Celsius.
+        function celsius(fahrenheitTemperature) {
+            return (5.0 / 9.0) * (fahrenheitTemperature - 32);
+        }
+
+        // (b) Convert Celsius to Fahrenheit.
+        function fahrenheit(celsiusTemperature) {
+            return (9.0 / 5.0) * celsiusTemperature + 32;
+        }
+
+        // (c) Read the temperature and display the selected conversion.
+        var inputField = document.getElementById("temperatureField");
+        var result = document.getElementById("result");
+
+        function displayConversion(convert, unit) {
+            if (!inputField.reportValidity()) {
+                return;
+            }
+
+            var temperature = parseFloat(inputField.value);
+            var converted = convert(temperature);
+            result.textContent = converted.toFixed(2) + " " + unit;
+        }
+
+        document.getElementById("toCelsius").addEventListener("click", function () {
+            displayConversion(celsius, "°C");
+        });
+
+        document.getElementById("toFahrenheit").addEventListener("click", function () {
+            displayConversion(fahrenheit, "°F");
+        });
+    </script>
+</body>
+
+</html>

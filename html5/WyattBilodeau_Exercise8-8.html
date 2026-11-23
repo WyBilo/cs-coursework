@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Calculating Compound Interest</title>
+    <style>
+        table {
+            width: 300px;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+            background-color: lightblue;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid black;
+            padding: 4px;
+        }
+
+        th {
+            text-align: left;
+            color: white;
+            background-color: darkblue;
+        }
+
+        .oddrow {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var principal = 1000.00;
+
+        for (var percent = 5; percent <= 10; percent++) {
+            var rate = percent / 100;
+
+            document.writeln("<table>");
+            document.writeln(
+                "<caption>Compound Interest at " + percent + "%</caption>"
+            );
+            document.writeln(
+                "<thead><tr><th>Year</th><th>Amount on Deposit</th></tr></thead>"
+            );
+            document.writeln("<tbody>");
+
+            for (var year = 1; year <= 10; year++) {
+                var amount = principal * Math.pow(1 + rate, year);
+                var rowClass = "";
+
+                if (year % 2 !== 0) {
+                    rowClass = " class='oddrow'";
+                }
+
+                document.writeln(
+                    "<tr" + rowClass + "><td>" + year + "</td><td>$" +
+                    amount.toFixed(2) + "</td></tr>"
+                );
+            }
+
+            document.writeln("</tbody></table>");
+        }
+    </script>
+</body>
+
+</html>

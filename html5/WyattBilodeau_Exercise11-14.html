@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Letter Frequency Counter</title>
+</head>
+
+<body>
+    <h1>Letter Frequency Counter</h1>
+
+    <form id="letterForm">
+        <label for="textInput">Enter several lines of text</label><br>
+        <textarea id="textInput" rows="6" cols="50"></textarea><br>
+        <button type="submit">Count letters</button>
+    </form>
+
+    <p><label for="results">Letter totals</label></p>
+    <textarea id="results" rows="28" cols="20" readonly></textarea>
+
+    <script>
+        const alphabet = "abcdefghijklmnopqrstuvwxyz";
+        const form = document.getElementById("letterForm");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const text = document.getElementById("textInput").value.toLowerCase();
+            const counts = new Array(alphabet.length).fill(0);
+
+            for (let i = 0; i < alphabet.length; i++) {
+                const letter = alphabet[i];
+                let position = text.indexOf(letter);
+
+                while (position !== -1) {
+                    counts[i]++;
+                    position = text.indexOf(letter, position + 1);
+                }
+            }
+
+            let output = "Letter  Count\n";
+            output += "------  -----\n";
+
+            for (let i = 0; i < alphabet.length; i++) {
+                output += alphabet[i].toUpperCase() + "       " + counts[i] + "\n";
+            }
+
+            document.getElementById("results").value = output;
+        });
+    </script>
+</body>
+
+</html>

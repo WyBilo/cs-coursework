@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Exercise 3.5: Parts A–H</title>
+</head>
+<body>
+    <h1>Exercise 3.5: Parts A–H</h1>
+
+    <h2>A. Cafeteria Food Rating</h2>
+    <p>
+        <label for="food-rating">Average food rating:</label>
+        <meter id="food-rating" min="1" max="10" value="7">7 out of 10</meter>
+        7 out of 10
+    </p>
+
+    <h2>B. Survey Results</h2>
+    <details>
+        <summary>Survey Results</summary>
+        <p>Students rated the cafeteria food on a scale of 1 to 10.
+            The average rating was 7 out of 10.</p>
+    </details>
+
+    <h2>C. First Name with Automatic Focus</h2>
+    <form>
+        <label for="first-name">First name:</label>
+        <input type="text" id="first-name" name="firstName" autofocus>
+    </form>
+
+    <h2>D. First Name with Placeholder Text</h2>
+    <!-- Only Part C uses autofocus because this is one combined page. -->
+    <input type="text" name="placeholderFirstName"
+        placeholder="First name" aria-label="First name">
+
+    <h2>E. State Suggestions</h2>
+    <label for="state">State:</label>
+    <input type="text" id="state" name="state" list="states">
+
+    <datalist id="states">
+        <option value="California">
+        <option value="Florida">
+        <option value="New York">
+        <option value="Texas">
+        <option value="Washington">
+    </datalist>
+
+    <h2>F. Number from 1 to 100</h2>
+    <label for="number">Choose a number:</label>
+    <input type="range" id="number" name="number"
+        min="1" max="100" step="1">
+
+    <h2>G. Form Opening Tag with Autocomplete Disabled</h2>
+    <pre><code>&lt;form autocomplete="off"&gt;</code></pre>
+
+    <h2>H. Highlighted Second Sentence</h2>
+    <p>Students were asked to rate the food in the cafeteria
+        on a scale of 1 to 10. <mark>The average result was 7.</mark></p>
+</body>
+</html>

@@ -1,0 +1,5 @@
+.stroke {
+    color: LightBlue;
+    -webkit-text-stroke: 3px Navy;
+    font-size: 700%;
+}

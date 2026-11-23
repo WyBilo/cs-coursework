@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Three Integer Calculator</title>
+    <script>
+        var number1 = parseInt(window.prompt("Enter the first integer:"), 10);
+        var number2 = parseInt(window.prompt("Enter the second integer:"), 10);
+        var number3 = parseInt(window.prompt("Enter the third integer:"), 10);
+
+        var sum = number1 + number2 + number3;
+        var average = sum / 3;
+        var product = number1 * number2 * number3;
+        var smallest = number1;
+        var largest = number1;
+
+        if (number2 < smallest) {
+            smallest = number2;
+        }
+
+        if (number3 < smallest) {
+            smallest = number3;
+        }
+
+        if (number2 > largest) {
+            largest = number2;
+        }
+
+        if (number3 > largest) {
+            largest = number3;
+        }
+
+        window.alert(
+            "Sum: " + sum +
+            "\nAverage: " + average +
+            "\nProduct: " + product +
+            "\nSmallest: " + smallest +
+            "\nLargest: " + largest
+        );
+    </script>
+</head>
+
+<body></body>
+
+</html>

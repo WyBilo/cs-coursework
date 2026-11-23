@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Page Appearance</title>
+    <script>
+        function updateAppearance() {
+            var colorField = document.getElementById("backgroundColor");
+            var fontField = document.getElementById("fontFamily");
+
+            document.body.style.backgroundColor = colorField.value;
+            document.body.style.fontFamily = fontField.value;
+        }
+
+        function start() {
+            document.getElementById("backgroundColor")
+                .addEventListener("input", updateAppearance);
+
+            document.getElementById("fontFamily")
+                .addEventListener("change", updateAppearance);
+
+            updateAppearance();
+        }
+
+        window.addEventListener("load", start);
+    </script>
+</head>
+
+<body>
+    <h1>Customize the Page</h1>
+
+    <p>
+        <label for="backgroundColor">Background color</label>
+        <input id="backgroundColor" type="color" value="#ffffff">
+    </p>
+
+    <p>
+        <label for="fontFamily">Font family</label>
+        <select id="fontFamily">
+            <option value="serif">Serif</option>
+            <option value="sans-serif">Sans serif</option>
+        </select>
+    </p>
+
+    <p>Use the controls to change this page's appearance.</p>
+</body>
+
+</html>

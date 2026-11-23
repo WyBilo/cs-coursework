@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Character Counter</title>
+</head>
+
+<body>
+    <h1>Character Counter</h1>
+
+    <form id="searchForm">
+        <label for="textInput">Enter several lines of text</label><br>
+        <textarea id="textInput" rows="6" cols="50"></textarea><br>
+
+        <label for="searchCharacter">Character to find</label>
+        <input type="text" id="searchCharacter" size="4" required>
+        <button type="submit">Count occurrences</button>
+    </form>
+
+    <p id="result" aria-live="polite"></p>
+
+    <script>
+        const form = document.getElementById("searchForm");
+        const result = document.getElementById("result");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const text = document.getElementById("textInput").value;
+            const character = document.getElementById("searchCharacter").value;
+
+            if ([...character].length !== 1) {
+                result.textContent = "Enter exactly one character.";
+                return;
+            }
+
+            let count = 0;
+            let position = text.indexOf(character);
+
+            while (position !== -1) {
+                count++;
+                position = text.indexOf(character, position + character.length);
+            }
+
+            result.textContent = `"${character}" appears ${count} time(s).`;
+        });
+    </script>
+</body>
+
+</html>

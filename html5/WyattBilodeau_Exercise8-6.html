@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Find the Smallest Integer</title>
+</head>
+
+<body>
+    <p id="result"></p>
+
+    <script>
+        var count = parseInt(prompt("How many integers will you enter?"), 10);
+        var smallest = parseInt(prompt("Enter integer 1:"), 10);
+
+        for (var i = 2; i <= count; i++) {
+            var number = parseInt(prompt("Enter integer " + i + ":"), 10);
+
+            if (number < smallest) {
+                smallest = number;
+            }
+        }
+
+        document.getElementById("result").textContent =
+            "The smallest integer is " + smallest + ".";
+    </script>
+</body>
+
+</html>

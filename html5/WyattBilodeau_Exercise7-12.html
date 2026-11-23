@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Credit Limit Calculator</title>
+    <script>
+        var accountNumber = parseInt(
+            window.prompt("Enter the account number:"), 10
+        );
+        var beginningBalance = parseInt(
+            window.prompt("Enter the balance at the beginning of the month:"), 10
+        );
+        var charges = parseInt(
+            window.prompt("Enter the total charges for this month:"), 10
+        );
+        var credits = parseInt(
+            window.prompt("Enter the total credits for this month:"), 10
+        );
+        var creditLimit = parseInt(
+            window.prompt("Enter the allowed credit limit:"), 10
+        );
+
+        var newBalance = beginningBalance + charges - credits;
+
+        document.writeln("<h1>Account Summary</h1>");
+        document.writeln("<p>Account number: " + accountNumber + "</p>");
+        document.writeln("<p>New balance: $" + newBalance.toFixed(2) + "</p>");
+        document.writeln("<p>Credit limit: $" + creditLimit.toFixed(2) + "</p>");
+
+        if (newBalance > creditLimit) {
+            document.writeln("<p>Credit limit exceeded.</p>");
+        }
+    </script>
+</head>
+
+<body></body>
+
+</html>

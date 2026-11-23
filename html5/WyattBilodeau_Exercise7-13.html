@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Sales Commission Calculator</title>
+    <script>
+        var item1Quantity = parseInt(
+            window.prompt("How many units of item 1 ($239.99) were sold?"), 10
+        );
+        var item2Quantity = parseInt(
+            window.prompt("How many units of item 2 ($129.75) were sold?"), 10
+        );
+        var item3Quantity = parseInt(
+            window.prompt("How many units of item 3 ($99.95) were sold?"), 10
+        );
+        var item4Quantity = parseInt(
+            window.prompt("How many units of item 4 ($350.89) were sold?"), 10
+        );
+
+        var grossSales =
+            item1Quantity * 239.99 +
+            item2Quantity * 129.75 +
+            item3Quantity * 99.95 +
+            item4Quantity * 350.89;
+
+        var earnings = 200 + grossSales * 0.09;
+
+        document.writeln("<h1>Weekly Sales Earnings</h1>");
+        document.writeln("<p>Gross sales: $" + grossSales.toFixed(2) + "</p>");
+        document.writeln("<p>Earnings: $" + earnings.toFixed(2) + "</p>");
+    </script>
+</head>
+
+<body></body>
+
+</html>
