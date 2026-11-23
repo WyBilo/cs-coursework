@@ -1,4 +1,5 @@
-Computer Science Coursework
+## Computer Science Coursework
+
 Coursework from my B.S. in Computer Science, with projects in C++, Java, HTML, CSS, and JavaScript.
 Featured Project · B-tree Student Database
 [Browse the B-tree Student Database source](algorithms-and-data-structures/lab2/)
